@@ -69,7 +69,7 @@ installed-posixrules-file := $(firstword $(filter /%,$(posixrules-file)) \
 					 $(addprefix $(inst_zonedir)/, \
 						     $(posixrules-file)))
 
-ifeq ($(cross-compiling),no)
+ifeq ($(cross-compiling),FORCE_NO)
 # Don't try to install the zoneinfo files since we can't run zic.
 install-others = $(addprefix $(inst_zonedir)/,$(zonenames) \
 					      $(zonenames:%=posix/%) \
